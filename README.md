@@ -14,24 +14,31 @@ Installation
 Usage
 Contributing
 License
+
 ##Data Preparation
 Clean and correct data types for accuracy.
 Handle missing values, remove duplicates, and ensure data consistency.
+
 ##Category Exploration
 Investigate app distribution across categories.
 Analyze the number of apps in each category and their respective market shares.
+
 ##Metrics Analysis
 Examine app ratings, size, popularity, and pricing trends.
 Identify patterns and correlations between different metrics.
+
 ##Sentiment Analysis
 Assess user sentiments through reviews.
 Use natural language processing (NLP) techniques to analyze user feedback and sentiment.
+
 ##Interactive Visualization
 Utilize code for compelling visualizations.
 Create interactive charts and graphs to present findings effectively.
+
 ##Skill Enhancement
 Integrate insights from the “Understanding Data Visualization” course.
 Apply advanced data visualization techniques to enhance the interpretability of results.
+
 ##Installation
 To get started with this project, clone the repository and install the necessary dependencies:
 

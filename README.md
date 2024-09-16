@@ -4,15 +4,25 @@ This project aims to clean, categorize, and visualize Google Play Store data to 
 
 ## Table of Contents
 Description
+
 Data Preparation
+
 Category Exploration
+
 Metrics Analysis
+
 Sentiment Analysis
+
 Interactive Visualization
+
 Skill Enhancement
+
 Installation
+
 Usage
+
 Contributing
+
 License
 
 ##Data Preparation
@@ -39,22 +49,22 @@ Create interactive charts and graphs to present findings effectively.
 Integrate insights from the “Understanding Data Visualization” course.
 Apply advanced data visualization techniques to enhance the interpretability of results.
 
-##Installation
+## Installation
 To get started with this project, clone the repository and install the necessary dependencies:
 
 git clone <repository-url>
 cd <repository-directory>
 pip install -r requirements.txt
 
-##Usage
+## Usage
 Run the Jupyter notebooks to perform data cleaning, analysis, and visualization:
 
 jupyter notebook
 
 Open the notebooks in your browser and follow the instructions to reproduce the analysis.
 
-##Contributing
+## Contributing
 Contributions are welcome! Please read the contributing guidelines for more details.
 
-##License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.

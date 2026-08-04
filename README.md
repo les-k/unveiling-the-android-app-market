@@ -1,70 +1,76 @@
-# Unveiling the Android App Market: Analyzing Google Play Store Data
-Description
-This project aims to clean, categorize, and visualize Google Play Store data to understand app market dynamics. By leveraging data analytics, visualization, and enhanced interpretation skills, we gain in-depth insights into the Android app market.
+# Unveiling the Android App Market
 
-## Table of Contents
-Description
+An analysis of Google Play Store data — cleaning it, exploring how apps are
+distributed across categories, and looking at what ratings, size, install counts
+and price say about the market.
 
-Data Preparation
+Built with pandas, matplotlib and Plotly. Both datasets are included, so the
+notebook runs on a fresh clone with nothing else to download.
 
-Category Exploration
+## Contents
 
-Metrics Analysis
+| File | What it is |
+|---|---|
+| [`playstore-analysis.ipynb`](playstore-analysis.ipynb) | The analysis — 33 cells, all output preserved |
+| [`playstore analysis .html`](playstore%20analysis%20.html) | Rendered export, viewable without Jupyter |
+| `apps.csv` | 9,659 apps — category, rating, reviews, size, installs, type, price, genre, Android version |
+| `user_reviews.csv` | 64,295 reviews — app, translated text, sentiment, polarity, subjectivity |
+| `android app.docx` | Written report |
 
-Sentiment Analysis
+> The notebook is 6 MB because every chart is embedded. GitHub sometimes
+> declines to render files that large — if the preview fails, the HTML export
+> shows the same thing.
 
-Interactive Visualization
+## What the analysis covers
 
-Skill Enhancement
+**Data preparation** — counts nulls per column, drops incomplete rows, checks
+dtypes, and summarises with `describe()` before anything else happens.
 
-Installation
+**Category exploration** — lists the distinct categories, ranks them by app
+count, and plots the distribution as a bar chart.
 
-Usage
+**Metric analysis** — separate summaries and distribution plots for the four
+things that characterise an app:
 
-Contributing
+| Metric | How it's shown |
+|---|---|
+| Rating | histogram, 20 bins |
+| Size | boxplot, to expose spread and outliers |
+| Installs | histogram of download counts |
+| Price | summary statistics |
 
-License
+**Review text preparation** — loads the review dataset and normalises
+`Translated_Review` through a `clean_text` function that strips non-alphabetic
+characters and lowercases the result.
 
-## Data Preparation
-Clean and correct data types for accuracy.
-Handle missing values, remove duplicates, and ensure data consistency.
+**Interactive charts** — key relationships rebuilt in Plotly so they can be
+hovered and zoomed: installs by category, rating against size with app names on
+hover, and the rating distribution.
 
-## Category Exploration
-Investigate app distribution across categories.
-Analyze the number of apps in each category and their respective market shares.
+## Running it
 
-## Metrics Analysis
-Examine app ratings, size, popularity, and pricing trends.
-Identify patterns and correlations between different metrics.
-
-## Sentiment Analysis
-Assess user sentiments through reviews.
-Use natural language processing (NLP) techniques to analyze user feedback and sentiment.
-
-## Interactive Visualization
-Utilize code for compelling visualizations.
-Create interactive charts and graphs to present findings effectively.
-
-## Skill Enhancement
-Integrate insights from the “Understanding Data Visualization” course.
-Apply advanced data visualization techniques to enhance the interpretability of results.
-
-## Installation
-To get started with this project, clone the repository and install the necessary dependencies:
-
-git clone <repository-url>
-cd <repository-directory>
+```bash
+git clone https://github.com/les-k/unveiling-the-android-app-market.git
+cd unveiling-the-android-app-market
 pip install -r requirements.txt
+jupyter notebook playstore-analysis.ipynb
+```
 
-## Usage
-Run the Jupyter notebooks to perform data cleaning, analysis, and visualization:
+The notebook reads both CSVs from the working directory, so start Jupyter from
+the repository root.
 
-jupyter notebook
+## Scope
 
-Open the notebooks in your browser and follow the instructions to reproduce the analysis.
+Two things this project sets up but doesn't finish, worth stating plainly rather
+than leaving a reader to discover:
 
-## Contributing
-Contributions are welcome! Please read the contributing guidelines for more details.
+- **Sentiment is prepared, not scored.** Review text is cleaned and ready, but no
+  polarity model or lexicon is applied. `user_reviews.csv` already ships with
+  `Sentiment`, `Sentiment_Polarity` and `Sentiment_Subjectivity` columns that the
+  notebook doesn't yet touch — that's the obvious next step.
+- **The analysis is descriptive.** It characterises the market; it doesn't model
+  or predict anything.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+MIT — see [LICENSE](LICENSE).
